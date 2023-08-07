@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .button {
+        color: black;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 0.15em;
+        display: inline-block;
+        position: relative;
+        font-weight: bold;
+        border-color: transparent;
+        background-color: transparent;
+      }
+
+      .button:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: black;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+      }
+      .button:hover:after,
+      .button.clicked:after {
+        width: 100%;
+        left: 0;
+      }
+
+      .button-1 {
+        opacity: 100%;
+        font-size: 20px;
+        position: absolute;
+        left: 45%;
+        margin-left: 10px;
+        margin-top: 50px;
+        padding: 8px 25px;
+      }
+
+      .button-2 {
+        opacity: 100%;
+        font-size: 20px;
+        position: absolute;
+        left: 54%;
+        margin-left: 5px;
+        margin-top: 50px;
+        padding: 8px 28px;
+      }
+
+      .button-3 {
+        opacity: 100%;
+        font-size: 20px;
+        position: absolute;
+        left: 64%;
+        margin-left: 12px;
+        margin-top: 50px;
+        padding: 8px 20px;
+      }
+
+      .button-4 {
+        opacity: 100%;
+        font-size: 20px;
+        position: absolute;
+        left: 79%;
+        margin-left: 8px;
+        margin-top: 50px;
+        padding: 8px 30px;
+      }
+
+      .button-5 {
+        opacity: 0;
+        position: absolute;
+        left: 11%;
+        margin-top: 65%;
+        padding: 520px 220px;
+        background-color: wheat;
+      }
+
+      .button-6 {
+        opacity: 0;
+        position: absolute;
+        left: 50%;
+        margin-left: 5px;
+        margin-top: 65%;
+        padding: 520px 230px;
+        background-color: wheat;
+      }
+
+      .button-7 {
+        opacity: 0;
+        position: absolute;
+        left: 40%;
+        margin-left: 15px;
+        margin-top: 229%;
+        padding: 20px 75px;
+        background-color: wheat;
+      }
+
+      .tiktok {
+        opacity: 0;
+        position: absolute;
+        left: 65%;
+        margin-left: 15px;
+        margin-top: 244%;
+        padding: 12px 75px;
+        background-color: wheat;
+      }
+      .instagram {
+        opacity: 0;
+        position: absolute;
+        left: 65%;
+        margin-left: 15px;
+        margin-top: 247%;
+        padding: 12px 75px;
+        background-color: wheat;
+      }
+      .facebook {
+        opacity: 0;
+        position: absolute;
+        left: 65%;
+        margin-left: 15px;
+        margin-top: 250%;
+        padding: 12px 75px;
+        background-color: wheat;
+      }
+      .linkedin {
+        opacity: 0;
+        position: absolute;
+        left: 65%;
+        margin-left: 15px;
+        margin-top: 253%;
+        padding: 12px 75px;
+        background-color: wheat;
+      }
+
+      /* Hide other images initially */
+      #aboutImage,
+      #ourProduct,
+      #testimony,
+      #categories1,
+      #categories2,
+      #categories3 {
+        display: none;
+      }
+    </style>
+    <title>CIHIDEUNG GARDEN</title>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <button class="button button-1" onclick="showHomePage()">Home</button>
+        <button class="button button-2" onclick="showAbout()">About</button>
+        <button class="button button-3" onclick="showOurProduct()">
+          Our Product
+        </button>
+        <button class="button button-4" onclick="showTestimony()">
+          Testimony
+        </button>
+        <button
+          id="button-5"
+          class="button button-5"
+          onclick="showCategories1()"
+          disabled
+        >
+          Categories 1
+        </button>
+        <button
+          id="button-6"
+          class="button button-6"
+          onclick="showCategories2()"
+          disabled
+        >
+          Categories 2
+        </button>
+        <button
+          id="button-7"
+          class="button button-7"
+          onclick="showCategories3()"
+          disabled
+        >
+          Our Product
+        </button>
+        <a
+          href="https://www.instagram.com/cihideunggarden/?igshid=MzRlODBiNWFlZA"
+          target="_blank"
+        >
+          <button id="tiktok" class="button tiktok">instagram</button>
+        </a>
+        <a href="https://www.facebook.com/cihideunggarden12" target="_blank">
+          <button id="instagram" class="button instagram">facebook</button>
+        </a>
+        <a
+          href="https://www.linkedin.com/company/cihideung-garden/"
+          target="_blank"
+        >
+          <button id="facebook" class="button facebook">linkedin</button>
+        </a>
+        <a
+          href="https://www.tiktok.com/@cihideunggarden?_t=8edAMsIXAvq&_r=1"
+          target="_blank"
+        >
+          <button id="linkedin" class="button linkedin">tiktok</button>
+        </a>
+      </div>
+
+      <img id="homePageImage" src="HOME PAGE.png" width="100%" />
+      <img id="aboutImage" src="ABOUT.png" width="100%" />
+      <img id="ourProduct" src="OUR PRODUCT.png" width="100%" />
+      <img id="testimony" src="TESTIMONY.png" width="100%" />
+      <img id="categories1" src="CATEGORIES.png" width="100%" />
+      <img id="categories2" src="CATEGORIES 2.png" width="100%" />
+      <img id="categories3" src="CATEGORIES 3.png" width="100%" />
+    </div>
+
+    <script>
+      function showHomePage() {
+        document.getElementById("homePageImage").style.display = "block";
+        document.getElementById("aboutImage").style.display = "none";
+        document.getElementById("ourProduct").style.display = "none";
+        document.getElementById("testimony").style.display = "none";
+        document.getElementById("categories1").style.display = "none";
+        document.getElementById("categories2").style.display = "none";
+        document.getElementById("categories3").style.display = "none";
+
+        document.getElementById("tiktok").style.display = "block";
+        document.getElementById("facebook").style.display = "block";
+        document.getElementById("linkedin").style.display = "block";
+        document.getElementById("instagram").style.display = "block";
+        document.getElementById("button-7").style.display = "block";
+
+        // Enable buttons
+        document.getElementById("button-5").disabled = false;
+        document.getElementById("button-6").disabled = false;
+        document.getElementById("button-7").disabled = false;
+      }
+
+      function showAbout() {
+        document.getElementById("homePageImage").style.display = "none";
+        document.getElementById("aboutImage").style.display = "block";
+        document.getElementById("ourProduct").style.display = "none";
+        document.getElementById("testimony").style.display = "none";
+        document.getElementById("categories1").style.display = "none";
+        document.getElementById("categories2").style.display = "none";
+        document.getElementById("categories3").style.display = "none";
+
+        document.getElementById("tiktok").style.display = "none";
+        document.getElementById("facebook").style.display = "none";
+        document.getElementById("linkedin").style.display = "none";
+        document.getElementById("instagram").style.display = "none";
+        document.getElementById("button-7").style.display = "none";
+
+        // Disable buttons
+        document.getElementById("button-5").disabled = true;
+        document.getElementById("button-6").disabled = true;
+        document.getElementById("button-7").disabled = true;
+      }
+
+      function showOurProduct() {
+        document.getElementById("homePageImage").style.display = "none";
+        document.getElementById("aboutImage").style.display = "none";
+        document.getElementById("ourProduct").style.display = "block";
+        document.getElementById("testimony").style.display = "none";
+        document.getElementById("categories1").style.display = "none";
+        document.getElementById("categories2").style.display = "none";
+        document.getElementById("categories3").style.display = "none";
+
+         document.getElementById("tiktok").style.display = "none";
+        document.getElementById("facebook").style.display = "none";
+        document.getElementById("linkedin").style.display = "none";
+        document.getElementById("instagram").style.display = "none";
+        document.getElementById("button-7").style.display = "none";
+
+        // Disable buttons
+        document.getElementById("button-5").disabled = true;
+        document.getElementById("button-6").disabled = true;
+        document.getElementById("button-7").disabled = true;
+      }
+
+      function showTestimony() {
+        document.getElementById("homePageImage").style.display = "none";
+        document.getElementById("aboutImage").style.display = "none";
+        document.getElementById("ourProduct").style.display = "none";
+        document.getElementById("testimony").style.display = "block";
+        document.getElementById("categories1").style.display = "none";
+        document.getElementById("categories2").style.display = "none";
+        document.getElementById("categories3").style.display = "none";
+
+         document.getElementById("tiktok").style.display = "none";
+        document.getElementById("facebook").style.display = "none";
+        document.getElementById("linkedin").style.display = "none";
+        document.getElementById("instagram").style.display = "none";
+        document.getElementById("button-7").style.display = "none";
+
+        // Disable buttons
+        document.getElementById("button-5").disabled = true;
+        document.getElementById("button-6").disabled = true;
+        document.getElementById("button-7").disabled = true;
+      }
+
+      function showCategories1() {
+        document.getElementById("homePageImage").style.display = "none";
+        document.getElementById("aboutImage").style.display = "none";
+        document.getElementById("ourProduct").style.display = "none";
+        document.getElementById("testimony").style.display = "none";
+        document.getElementById("categories1").style.display = "none";
+        document.getElementById("categories2").style.display = "none";
+        document.getElementById("categories3").style.display = "block";
+
+         document.getElementById("tiktok").style.display = "none";
+        document.getElementById("facebook").style.display = "none";
+        document.getElementById("linkedin").style.display = "none";
+        document.getElementById("instagram").style.display = "none";
+        document.getElementById("button-7").style.display = "none";
+
+        // Disable buttons
+        document.getElementById("button-5").disabled = true;
+        document.getElementById("button-6").disabled = true;
+        document.getElementById("button-7").disabled = true;
+      }
+
+      function showCategories2() {
+        document.getElementById("homePageImage").style.display = "none";
+        document.getElementById("aboutImage").style.display = "none";
+        document.getElementById("ourProduct").style.display = "none";
+        document.getElementById("testimony").style.display = "none";
+        document.getElementById("categories1").style.display = "block";
+        document.getElementById("categories2").style.display = "none";
+        document.getElementById("categories3").style.display = "none";
+
+         document.getElementById("tiktok").style.display = "none";
+        document.getElementById("facebook").style.display = "none";
+        document.getElementById("linkedin").style.display = "none";
+        document.getElementById("instagram").style.display = "none";
+        document.getElementById("button-7").style.display = "none";
+
+        // Disable buttons
+        document.getElementById("button-5").disabled = true;
+        document.getElementById("button-6").disabled = true;
+        document.getElementById("button-7").disabled = true;
+      }
+
+      function showCategories3() {
+        document.getElementById("homePageImage").style.display = "none";
+        document.getElementById("aboutImage").style.display = "none";
+        document.getElementById("ourProduct").style.display = "block";
+        document.getElementById("testimony").style.display = "none";
+        document.getElementById("categories1").style.display = "none";
+        document.getElementById("categories2").style.display = "none";
+        document.getElementById("categories3").style.display = "none";
+
+        document.getElementById("tiktok").style.display = "none";
+        document.getElementById("facebook").style.display = "none";
+        document.getElementById("linkedin").style.display = "none";
+        document.getElementById("instagram").style.display = "none";
+        document.getElementById("button-7").style.display = "none";
+
+
+        // Disable buttons
+        document.getElementById("button-5").disabled = true;
+        document.getElementById("button-6").disabled = true;
+        document.getElementById("button-7").disabled = true;
+      }
+
+      // Initially show homePageImage only
+      showHomePage();
+    </script>
+  </body>
+</html>
